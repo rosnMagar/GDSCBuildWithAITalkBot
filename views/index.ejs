@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src = "https://cdn.tailwindcss.com"></script>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <p><%= message %></p>
+        </div><div class="chat-container">
+        <div class="chat-bubbles" id="chatBubbles"></div>
+        <textarea id="text-input" maxlength="500" name="speechText" rows="5" cols="50" placeholder="Your speech will appear here..."></textarea>
+        <br>
+        <button id="start-recognition"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >Start Recognition</button>
+        <button id="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >Submit</button>
+        <button id="clear"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >Clear</button>
+
+        <div id="meter" class="rounded-full w-32 h-32 bg-red-500 z-0"></div>
+        <script type="module" src="/script.js"></script>
+        <script type="module" src="/meter.js"></script>
+        <script type="module" src="/chat.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    </body>
+</html>
