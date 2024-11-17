@@ -33,7 +33,7 @@
             const level = Math.min(rms * 100, 100); // Scale to 0-100%
 
             // Update the meter
-            meter.style.scale =  `${level + 50}%`
+            meter.style.scale =  `${level + 75}%`
 
             // Loop the animation
             requestAnimationFrame(updateMeter);

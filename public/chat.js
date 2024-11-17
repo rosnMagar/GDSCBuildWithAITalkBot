@@ -8,7 +8,13 @@ export function displayMessage(){
         const messageDiv = document.createElement('div')
         messageDiv.setAttribute("markdown", "1")
         messageDiv.classList.add('message', msg.user === 'server' ? 'server' : 'user')
-        messageDiv.innerHTML = `<strong>${msg.user}:</strong> ${marked.parse(msg.message || '')}`
+        if(msg.user === 'user'){
+            messageDiv.className = 'px-4 py-1 rounded-lg bg-lime-400 w-fit ml-auto mr-3'
+            messageDiv.innerHTML = `${marked.parse(msg.message || '')}`
+        }else {
+            messageDiv.className = 'm-3 my-10'
+            messageDiv.innerHTML = `${marked.parse(msg.message || '')}`
+        }
         chatBubbles.appendChild(messageDiv)
     });
 

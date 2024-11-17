@@ -1,20 +1,4 @@
-/* #meter-container {
-    width: 100px;
-    height: 100px;
-    background: #240909;
-    border: 1px solid #888;
-    border-radius: 50%;
-    position: relative;
-    z-index: 0
+body{
+    font-family: "Outfit", serif;
+    font-style: normal;
 }
-#meter {
-    height: 100%;
-    background: rgba(73, 59, 48, 0.512);
-    border-radius: 50%;
-    width: 100%;
-    z-index: 0;
-    translate: 50px 50px 0px 0px;
-}
-#status {
-    margin-top: 10px;
-} */

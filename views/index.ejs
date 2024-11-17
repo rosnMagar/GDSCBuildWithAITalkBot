@@ -3,28 +3,43 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:wght@100&display=swap" rel="stylesheet">
         <script src = "https://cdn.tailwindcss.com"></script>
         <title><%= title %></title>
         <link rel="stylesheet" href="/style.css">
     </head>
-    <body>
-        <h1><%= title %></h1>
-        <p><%= message %></p>
-        </div><div class="chat-container">
-        <div class="chat-bubbles" id="chatBubbles"></div>
-        <textarea id="text-input" maxlength="500" name="speechText" rows="5" cols="50" placeholder="Your speech will appear here..."></textarea>
-        <br>
-        <button id="start-recognition"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >Start Recognition</button>
-        <button id="submit"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >Submit</button>
-        <button id="clear"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >Clear</button>
+    <body style="background-color: #f4f1eb;" class="mx-10 h-lvh">
+        <div class="flex w-full h-lvh">
+            <div class="left flex-col basis-2/3">
+                <h1>
+                    <img src="./banner.png" class="w-52"></img>
+                </h1>
+                <div class="chat-container h-full">
+                    <div class="chat-bubbles overflow-scroll flex-col" style="min-height:70vh; max-height: 70vh;" id="chatBubbles"></div>
+                    <div class="controls mt-5">
+                        <textarea id="text-input" class="border-none focus:outline-none p-4 w-100 rounded mx-autow-full p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" maxlength="500" name="speechText" rows="1" cols="80" placeholder="Your speech will appear here..."></textarea>
+                        <br>
+                        <button id="submit"
+                            class="hover:bg-amber-400 hover:text-white py-2 px-4"
+                        >Let’s submit your information</button>
+                        <button id="clear"
+                            class="hover:bg-amber-400 hover:text-white py-2 px-4"
+                        >Reset and Restart conversation</button>
+                    </div>
+                </div>
+            </div>
+            <div class="right flex-col basis-1/3">
+                <p class="mx-auto mt-52 text-center"><%= message %></p>
+                <div id="meter" class="rounded-full mt-10 w-52 h-52 bg-red-500 mx-auto" style="background-color: #f39d12c4;">
+                    <button id="start-recognition"
+                        class="text-white mt-20 py-2 px-4"
+                    >Click Me to start Speaking</button>
+                </div>
+            </div>
+        </div>
 
-        <div id="meter" class="rounded-full w-32 h-32 bg-red-500 z-0"></div>
         <script type="module" src="/script.js"></script>
         <script type="module" src="/meter.js"></script>
         <script type="module" src="/chat.js"></script>

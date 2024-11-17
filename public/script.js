@@ -55,6 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const submitButtonPress = async() => {
+        if(textInput.value === "") { 
+            alert('Please type or say something')
+            return
+        };
         const val = await getValueFromGemini(textInput.value)
         addMessage("user", textInput.value)
         displayMessage()
@@ -108,8 +112,4 @@ const speak = (text) => {
         console.error("Error:", error)
         alert("An error occurred. Please try again")
     }
-}
-
-const loadVoices = () => {
-    return speechSynthesis.getVoices().length
 }
