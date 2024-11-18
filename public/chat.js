@@ -1,4 +1,7 @@
-let chatMessages = JSON.parse(localStorage.getItem('chatMessages')) || [];
+let chatMessages = JSON.parse(localStorage.getItem('chatMessages')) || [{
+    user: 'server',
+    message: 'Hello there!, Please feel free to ask me anything related to nutrition!'
+}];
 
 const chatBubbles = document.getElementById('chatBubbles');
 
@@ -12,7 +15,7 @@ export function displayMessage(){
             messageDiv.className = 'px-4 py-1 rounded-lg bg-lime-400 w-fit ml-auto mr-3'
             messageDiv.innerHTML = `${marked.parse(msg.message || '')}`
         }else {
-            messageDiv.className = 'm-3 my-10'
+            messageDiv.className = 'm-3'
             messageDiv.innerHTML = `${marked.parse(msg.message || '')}`
         }
         chatBubbles.appendChild(messageDiv)
